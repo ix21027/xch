@@ -11,10 +11,10 @@ func Router() http.Handler {
 	r := chi.NewRouter()
 
 	r.Use(middleware.Logger)
-
-	r.Get("/rate", getRate)
-
-	r.Post("/subscribe", addSubscriber)
-
+        r.Route("/api", func(r chi.Router) {
+		r.Get("/rate", getRate)
+		r.Post("/subscribe", addSubscriber)
+	})
+	
 	return r
 }
