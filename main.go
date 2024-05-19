@@ -20,8 +20,7 @@ func main() {
 	db.Init()
 	defer db.CloseConn()
 
-	// gocron.Every(1).Day().At("11:11").Do(service.NotifySubscribers)
-	gocron.Every(1).Second().Do(service.NotifySubscribers)
+	gocron.Every(1).Day().At("11:11").Do(service.NotifySubscribers)
 	go func() { <-gocron.Start() }()
 
 	server := &http.Server{Addr: ":9090", Handler: handler.Router()}
