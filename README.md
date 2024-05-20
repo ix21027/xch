@@ -1,4 +1,4 @@
-(should be exported)
+(should be setted in .env)
 SMTP_SERVER
 PORT_EMAIL
 EMAIL_ADDR
