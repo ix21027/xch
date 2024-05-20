@@ -14,6 +14,7 @@ import (
 	"xch/service"
 
 	"github.com/jasonlvhit/gocron"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func main() {
